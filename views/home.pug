@@ -1,0 +1,25 @@
+extends default
+
+block content
+  div.container
+    h1 Records
+    each record_type in records
+      div.category
+        h4.record-title
+          | #{record_type.title}
+        each record in record_type.items 
+          div.item
+            p 
+            | → #{record.name} : #{record.nb} (#{record.date})
+    
+
+  div.container
+    h1 Performances
+    each perf_type in perfs
+      div.category
+        h4.perf-title
+          | #{perf_type.title}
+        each perf in perf_type.items 
+          div.item
+            p 
+            | → #{perf.name} : #{perf.desc} (#{perf.date})
